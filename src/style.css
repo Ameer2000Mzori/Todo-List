@@ -4,3 +4,81 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #bef8f4;
+}
+
+.header .head {
+  height: 70%;
+  width: 75%;
+  background-color: #687eff;
+  border-radius: 2rem;
+  border: solid #80b3ff 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.header .head .text-Input-Wrap {
+  font-family: "Roboto", sans-serif;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 15px;
+  width: 50%;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap .text-Input {
+  padding: 5px 10px;
+  border-radius: 1rem;
+  background-color: #80b3ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  border: solid #98e4ff 5px;
+  color: white;
+  outline: none;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap .text-Input::placeholder {
+  color: white;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap .add-Todo-Btn {
+  padding: 10px 35px;
+  border-radius: 1rem;
+  border: solid #98e4ff 5px;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  transition: all 100ms;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap .add-Todo-Btn:hover {
+  border: solid #98e4ff 5px;
+  color: white;
+  transform: scale(1.1);
+  background-color: #80b3ff;
+}
+
+.header .head .text-Input-Wrap .button-Input-Wrap .add-Todo-Btn:active {
+  transform: scale(0.9);
+}

@@ -168,3 +168,23 @@ body {
   color: white;
   background-color: red;
 }
+
+@media screen and (max-width: 1000px) {
+  .header .head {
+    height: 90%;
+    width: 90%;
+    overflow-x: hidden;
+    flex-direction: column;
+  }
+
+  .header .head .text-Input-Wrap {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 40%;
+  }
+
+  .header .head .todo-List {
+    width: 100%;
+    border-left: none;
+  }
+}

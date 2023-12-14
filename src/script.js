@@ -21,12 +21,13 @@ var addTodo = function () {
         todoCard.appendChild(deleteTodoBtn);
         todosCardsWrap.prepend(todoCard);
         // our delete button event :
-        deleteTodoBtn.addEventListener("click", function () {
-            if (todoCard) {
-                todoCard.remove();
-            }
+        deleteTodoBtn.addEventListener("click", function (e) {
+            var valText = e.target.parentElement.firstChild.textContent;
+            deleteTodo(valText);
         });
     });
+    textInput.textContent = "";
+    textInput.value = "";
 };
 // add new todo functions
 var addNewTodo = function () {
@@ -41,15 +42,16 @@ var addNewTodo = function () {
     todosCardsWrap.innerHTML = "";
     addTodo();
 };
+// delete todo element
+var deleteTodo = function (valText) {
+    textObj = textObj.filter(function (el) {
+        return el.text !== valText;
+    });
+    console.log(textObj);
+    localStorage.setItem("textObj", JSON.stringify(textObj));
+    todosCardsWrap.innerHTML = "";
+    addTodo();
+};
 // event lisnters
 addTodoBtn.addEventListener("click", addNewTodo);
 addTodo();
-// html loop up tree:
-// <div class="todo-Card">
-//   <h3 class="text-Todo">
-//     hallo world im ameerhallo world im ameerhallo world im ameer hallo world im
-//     ameerhallo world im ameerhallo world im ameer hallo world im ameerhallo
-//     world im ameerhallo world im ameer
-//   </h3>
-//   <button class="delete-Todo-Btn">DELETE</button>
-// </div>;

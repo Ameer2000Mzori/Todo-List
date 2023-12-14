@@ -4,6 +4,17 @@ const textInput: any = document.getElementsByClassName("text-Input")[0];
 const todosCardsWrap = document.getElementsByClassName("todos-Cards-Wrap")[0];
 
 // global variables
+let textObj = [
+  {
+    text: "need to dance",
+  },
+  {
+    text: "need to red",
+  },
+  {
+    text: "need to car",
+  },
+];
 
 // functions
 const addTodo = () => {
@@ -22,6 +33,13 @@ const addTodo = () => {
 
   todoCard.appendChild(deleteTodoBtn);
   todosCardsWrap.prepend(todoCard);
+
+  // our delete button event :
+  deleteTodoBtn.addEventListener("click", () => {
+    if (todoCard) {
+      todoCard.remove();
+    }
+  });
 };
 
 // event lisnters

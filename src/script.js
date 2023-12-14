@@ -3,6 +3,17 @@ var addTodoBtn = document.getElementsByClassName("add-Todo-Btn")[0];
 var textInput = document.getElementsByClassName("text-Input")[0];
 var todosCardsWrap = document.getElementsByClassName("todos-Cards-Wrap")[0];
 // global variables
+var textObj = [
+    {
+        text: "need to dance",
+    },
+    {
+        text: "need to red",
+    },
+    {
+        text: "need to car",
+    },
+];
 // functions
 var addTodo = function () {
     // creating elements
@@ -17,6 +28,12 @@ var addTodo = function () {
     deleteTodoBtn.textContent = "DELETE";
     todoCard.appendChild(deleteTodoBtn);
     todosCardsWrap.prepend(todoCard);
+    // our delete button event :
+    deleteTodoBtn.addEventListener("click", function () {
+        if (todoCard) {
+            todoCard.remove();
+        }
+    });
 };
 // event lisnters
 addTodoBtn.addEventListener("click", addTodo);

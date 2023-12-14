@@ -4,7 +4,9 @@ const textInput: any = document.getElementsByClassName("text-Input")[0];
 const todosCardsWrap = document.getElementsByClassName("todos-Cards-Wrap")[0];
 
 // global variables
-let textObj = [];
+// getting data from local storage if there is :
+
+let textObj = JSON.parse(localStorage.getItem("textObj")) || [];
 
 // functions
 const addTodo = () => {
@@ -44,6 +46,7 @@ const addNewTodo = () => {
   };
   textObj.push(newArry);
   console.log(textObj);
+  localStorage.setItem("textObj", JSON.stringify(textObj));
   todosCardsWrap.innerHTML = ``;
   addTodo();
 };

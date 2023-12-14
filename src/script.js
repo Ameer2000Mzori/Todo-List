@@ -3,7 +3,8 @@ var addTodoBtn = document.getElementsByClassName("add-Todo-Btn")[0];
 var textInput = document.getElementsByClassName("text-Input")[0];
 var todosCardsWrap = document.getElementsByClassName("todos-Cards-Wrap")[0];
 // global variables
-var textObj = [];
+// getting data from local storage if there is :
+var textObj = JSON.parse(localStorage.getItem("textObj")) || [];
 // functions
 var addTodo = function () {
     // creating elements
@@ -36,6 +37,7 @@ var addNewTodo = function () {
     };
     textObj.push(newArry);
     console.log(textObj);
+    localStorage.setItem("textObj", JSON.stringify(textObj));
     todosCardsWrap.innerHTML = "";
     addTodo();
 };

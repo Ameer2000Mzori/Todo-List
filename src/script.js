@@ -32,15 +32,20 @@ var addTodo = function () {
 // add new todo functions
 var addNewTodo = function () {
     var textVal = textInput.value;
-    // new arry
-    var newArry = {
-        text: textVal,
-    };
-    textObj.push(newArry);
-    console.log(textObj);
-    localStorage.setItem("textObj", JSON.stringify(textObj));
-    todosCardsWrap.innerHTML = "";
-    addTodo();
+    if (textVal !== "") {
+        // new arry
+        var newArry = {
+            text: textVal,
+        };
+        textObj.push(newArry);
+        console.log(textObj);
+        localStorage.setItem("textObj", JSON.stringify(textObj));
+        todosCardsWrap.innerHTML = "";
+        addTodo();
+    }
+    else {
+        console.log("please enter something");
+    }
 };
 // delete todo element
 var deleteTodo = function (valText) {

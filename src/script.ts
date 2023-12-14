@@ -41,15 +41,19 @@ const addTodo = () => {
 const addNewTodo = () => {
   let textVal = textInput.value;
 
-  // new arry
-  let newArry = {
-    text: textVal,
-  };
-  textObj.push(newArry);
-  console.log(textObj);
-  localStorage.setItem("textObj", JSON.stringify(textObj));
-  todosCardsWrap.innerHTML = ``;
-  addTodo();
+  if (textVal !== "") {
+    // new arry
+    let newArry = {
+      text: textVal,
+    };
+    textObj.push(newArry);
+    console.log(textObj);
+    localStorage.setItem("textObj", JSON.stringify(textObj));
+    todosCardsWrap.innerHTML = ``;
+    addTodo();
+  } else {
+    console.log("please enter something");
+  }
 };
 
 // delete todo element
